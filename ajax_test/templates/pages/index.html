@@ -1,0 +1,47 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+
+<body>
+
+        <div class="container">
+            <div class="comments">
+                <h2>Comments</h2>
+                <!--one comment-->
+                <div id="temp">
+
+                </div>
+<!--                {% for comment in comments %}-->
+<!--                <div class="comment">-->
+<!--                    <img src="{{comment.author.image.url}}" alt="" class="avatar">-->
+<!--                    <div class="comment-card">-->
+<!--                        <small class="author"><i class="far fa-user"></i> {{comment.author.fullname|title}}</small>-->
+<!--                        <small class="date"><i class="far fa-clock"></i> {{comment.date|date}}</small>-->
+<!--                        <div class="comment-content"> {{comment.content}}</div>-->
+<!--                        <span class="reactions">25 <i class="fas fa-thumbs-up like"></i>&nbsp;3 <i class="fas fa-thumbs-down dislike"></i></span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--               {% endfor %}-->
+            </div>
+            <div class="form">
+                <h2>Leave a comment</h2>
+                <form action="." role="form" method="POST" id="comment-form">
+                {% csrf_token %}
+                    <textarea class="form-input"  name="message" placeholder="message" cols="30" rows="10"></textarea>
+                    <input class="form-btn form-input" type="submit" value="Comment" name="comment-form" id="submitt">
+                </form>
+            </div>
+        </div>
+
+<script></script>
+</body>
+</html>
